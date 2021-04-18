@@ -3,7 +3,10 @@ from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.optimizers import Adam
-import L1.py
+def layers(model):
+    model.add(Dense(units = 100,input_shape=(11,),activation='relu'))
+    model.add(Dense(units = 4,activation='relu'))
+    return model
 
 ds  = pd.read_csv("wine.csv")
 X = ds[['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar',
