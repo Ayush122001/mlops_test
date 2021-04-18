@@ -18,5 +18,5 @@ model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=10, verbose=0
 accuracy = model.evaluate(x_test, y_test, verbose=0)
 accuracy = accuracy*100
 model.save("final.h5")
-os.system("echo 'accuracy' > a.txt")	
+os.system("echo {} > a.txt".format(accuracy))	
 	
