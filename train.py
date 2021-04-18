@@ -14,7 +14,7 @@ X = ds[['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar',
        'pH', 'sulphates', 'alcohol']]
 y = ds['quality']
 model = Sequential()
-model = L1.layers(model)
+model = layers(model)
 model.add(Dense(units = 1,activation='sigmoid'))
 model.compile(loss='binary_crossentropy' ,optimizer=Adam(learning_rate=0.00001))
 x_train, x_test, y_train, y_test = train_test_split(X,y,test_size=0.1,random_state=20)
