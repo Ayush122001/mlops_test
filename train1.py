@@ -5,17 +5,16 @@ from keras.layers import Dense
 from keras.optimizers import Adam
 import os
 def layers(model):
-    model.add(Dense(units = 10,input_shape=(11,),activation='relu'))
-    model.add(Dense(units = 5,activation='relu'))
+    model.add(Dense(units = 30,input_shape=(11,),activation='relu'))
+    model.add(Dense(units = 15,activation='relu'))
     model.add(Dense(units = 4,activation='relu'))
     return model
 
 ds  = pd.read_csv("wine.csv")
 X = ds[['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar',
        'chlorides', 'free sulfur dioxide', 'total sulfur dioxide', 'density',
-       'pH', 'sulphates50, 'alcohol']]
-y = ds['quality'
-      ]
+       'pH', 'sulphates', 'alcohol']]
+y = ds['quality']
 y=pd.get_dummies(y,drop_first=True)
 #0=bad
 #1=good
