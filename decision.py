@@ -14,3 +14,11 @@ if float(a) < 85:
 if float(a) < 85:
   os.system("rm -rf *.h5")
   os.system("python3 train3.py")
+  
+if float(a) < 85:
+  os.system("rm -rf *.h5")
+  os.system("python3 train4.py")
+  
+if float(a) < 85:
+  os.system("rm -rf *.h5")
+  os.system("python3 train5.py")
