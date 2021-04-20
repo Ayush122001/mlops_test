@@ -24,6 +24,7 @@ model.add(Dense(units = 1,activation='sigmoid'))
 model.compile(loss='binary_crossentropy' ,optimizer=Adam(learning_rate=0.00001))
 model.fit(x_train,y_train, validation_data=( x_test,y_test), epochs=10, verbose=0)
 import numpy as np
+yhat = (model.predict([x_test]))
 yhat = np.round(yhat)
 y_test = y_test.to_numpy()
 count = 0
@@ -37,4 +38,3 @@ accuracy = (count*100)/total
 print(accuracy)
 model.save("final.h5")
 os.system("echo {} > a.txt".format(accuracy))	
-	
