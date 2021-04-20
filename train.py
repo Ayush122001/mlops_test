@@ -5,7 +5,7 @@ from keras.layers import Dense
 from keras.optimizers import Adam
 import os
 def layers(model):
-    model.add(Dense(units = 100,input_shape=(11,),activation='relu'))
+    model.add(Dense(units = 10,input_shape=(11,),activation='relu'))
     model.add(Dense(units = 4,activation='relu'))
     return model
 
