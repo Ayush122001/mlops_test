@@ -5,17 +5,17 @@ from keras.layers import Dense
 from keras.optimizers import Adam
 import os
 def layers(model):
-    model.add(Dense(units = 30,input_shape=(11,),activation='relu'))
+    model.add(Dense(units = 60,input_shape=(11,),activation='relu'))
+    model.add(Dense(units = 30,activation='relu'))
     model.add(Dense(units = 15,activation='relu'))
-    model.add(Dense(units = 3,activation='relu'))
+    model.add(Dense(units = 4,activation='relu'))
     return model
 
 ds  = pd.read_csv("wine.csv")
 X = ds[['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar',
        'chlorides', 'free sulfur dioxide', 'total sulfur dioxide', 'density',
-       'pH', 'sulphates50, 'alcohol']]
-y = ds['quality'
-      ]
+       'pH', 'sulphates', 'alcohol']]
+y = ds['quality']
 y=pd.get_dummies(y,drop_first=True)
 #0=bad
 #1=good
@@ -24,7 +24,7 @@ model = Sequential()
 model = layers(model)
 model.add(Dense(units = 1,activation='sigmoid'))
 model.compile(loss='binary_crossentropy' ,optimizer=Adam(learning_rate=0.00001))
-model.fit(x_train,y_train, validation_data=( x_test,y_test), epochs=10, verbose=0)
+model.fit(x_train,y_train, validation_data=( x_test,y_test), epochs=20, verbose=0)
 import numpy as np
 yhat = (model.predict([x_test]))
 yhat = np.round(yhat)
