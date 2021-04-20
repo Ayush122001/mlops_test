@@ -2,23 +2,36 @@ import os
 ac = os.popen("cat a.txt")
 a = ac.read()
 a = a.rstrip()
-if float(a) < 85:
-  os.system("rm -rf *.h5")
-  os.system("python3 train1.py")
+accuracy = a
+while accuracy < 60:
+  if float(a) < 60:
+    os.system("rm -rf *.h5")
+    os.system("python3 train1.py")
+    if accuracy > 60:
+      break
   
-if float(a) < 85:
-  os.system("rm -rf *.h5")
-  os.system("python3 train2.py")
+  if float(a) < 60:
+    os.system("rm -rf *.h5")
+    os.system("python3 train2.py")
+    if accuracy > 60:
+      break
   
   
-if float(a) < 85:
-  os.system("rm -rf *.h5")
-  os.system("python3 train3.py")
+  if float(a) < 60:
+    os.system("rm -rf *.h5")
+    os.system("python3 train3.py")
+    if accuracy > 60:
+      break
   
-if float(a) < 85:
-  os.system("rm -rf *.h5")
-  os.system("python3 train4.py")
+  if float(a) < 60:
+    os.system("rm -rf *.h5")
+    os.system("python3 train4.py")
+    if accuracy > 60:
+      break
   
-if float(a) < 85:
-  os.system("rm -rf *.h5")
-  os.system("python3 train5.py")
+  if float(a) < 60:
+    os.system("rm -rf *.h5")
+    os.system("python3 train5.py")
+    if accuracy > 60:
+      break
+print("Final Accuracy = ", accuracy)
