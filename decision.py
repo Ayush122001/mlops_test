@@ -3,7 +3,7 @@ ac = os.popen("cat a.txt")
 a = ac.read()
 a = a.rstrip()
 accuracy = a
-while accuracy < 60:
+while float(accuracy) < 60:
   if float(a) < 60:
     os.system("rm -rf *.h5")
     os.system("python3 train1.py")
