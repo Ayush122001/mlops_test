@@ -42,7 +42,7 @@ model.fit(X_train, y_train, epochs=50)
 yhat = (model.predict([X_test]))
 import numpy as np
 yhat = np.round(yhat)
-y_test = y_test.to_numpy()
+#y_test = y_test.to_numpy()
 count = 0
 n = 0
 total = len(yhat)
