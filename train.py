@@ -40,6 +40,7 @@ best_hps=tuner.get_best_hyperparameters(num_trials=1)[0]
 model = tuner.hypermodel.build(best_hps)
 model.fit(X_train, y_train, epochs=50)
 yhat = (model.predict([X_test]))
+import numpy as np
 yhat = np.round(yhat)
 y_test = y_test.to_numpy()
 count = 0
